@@ -12,7 +12,7 @@ def lee_datos(series):
         for lista in lector:
             ID = int(lista[0])
             Title= str(lista[1])
-            Age = lista[2]
+            Age = str(lista[2])
             rating=float(lista[3])
             Netflix=bool(lista[4])
             Hulu=bool(lista[5])
