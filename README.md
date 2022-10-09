@@ -1,32 +1,39 @@
 # Proyecto del Primer Cuatrimestre Fundamentos de Programación (Curso  \<22\>/\<23\>)
 Autor/a: \<Javier Pallarés González\>   uvus:\<javpalgon/MGF6851\>
 
-Aquí debes añadir la descripción del dataset y un enunciado del dominio del proyecto.
+El objetivo de este proyecto es analizar y estudiar los datos y características de los shows más famosos de la televisión, publicados en el dataset de Kaggle(https://www.kaggle.com/datasets/ruchi798/tv-shows-on-netflix-prime-video-hulu-and-disney). Este dataset constaba de 12 columnas, pero ninguna de tipo fecha, por lo tanto, hemos generado una columna de fechas aleatorias correspondiéndose con la fecha de estreno de estos programas de TV. Por último hemos eliminado 4 columnas, lo que supondrá un total de 9 columnas.
 
 
 ## Estructura de las carpetas del proyecto
 
 * **/src**: Contiene los diferentes módulos de Python que conforman el proyecto.
-  * **\<modulo1.py\>**: Describe aquí el módulo principal.
-  * **\<modulo1_test.py\>**: Describe aquí el módulo de pruebas.
-  * **\<modulo2.py\>**: Añade descripciones para el resto de módulos que pueda tener tu proyecto. Por ejemplo, sería conveniente tener un módulo separado con funciones genéricas para dibujar gráficas y/o otro con funciones genéricas de conversión de tipos. 
+  * **\<proyecto.py\>**: En este módulo se encuentra la función que lee los datos del .csv y los inserta en una lista vacía de manera ordenada.
+  * **\<test_proyecto.py\>**: En el módulo de pruebas se invocan las funciones del módulo proyecto.py, ya que aquí se encuentra el main. 
 * **/data**: Contiene el dataset o datasets del proyecto
-    * **\<dataset1.csv\>**: Añade una descripción genérica del dataset.
-    * **\<dataset2.csv\>**: Añade una descripción del resto de datasets que puedas tener.
+    * **\<TV_SHOWS_0.csv\>**: Fichero donde se encuentran todos los datos con los que hemos trabajado.
+
     
 ## Estructura del *dataset*
 
-Aquí debes describir la estructura del dataset explicando qué representan los datos que contiene y la descripción de cada una de las columnas.
+El dataset está compuesto por \<9\> columnas, con la siguiente descripción:
 
-El dataset está compuesto por \<N\> columnas, con la siguiente descripción:
-
-* **\<columna 1>**: de tipo \<tipo\>, representa....
-* **\<columna 2>**: de tipo \<tipo\>, representa....
-....
+* **\<ID>**: de tipo \<int\>, es un identificador entero
+* **\<Title>**: de tipo \<str\>, es una cadena de caracteres donde se encuentran los títulos de los shows
+* **\<Age>**: de tipo \<str\>, representa una cadena de caracteres. Indica la edad mínima para poder ver la serie
+* **\<rating>**: de tipo \<float\>, representa la valoración de la serie sobre 10.
+* **\<Netflix>**: de tipo \<boolean\>, indica si el show se retransmite en Netflix o no.
+* **\<Hulu>**: de tipo \<boolean\>, indica si el show se retransmite en Hulu o no.
+* **\<Prime_Video>**: de tipo \<boolean\>, indica si el show se retransmite en Prime_Video o no.
+* **\<Disney+>**: de tipo \<boolean\>, indica si el show se retransmite en Disney+ o no.
+* **\<release_date>**: de tipo \<date\>, representa la fecha cuando se estrenó la serie. Esta columna fue generada mediante datos aleatorios.
 
 ## Tipos implementados
 
-Descrbe aquí la o las namedtuple que defines en tu proyecto.
+Se ha utilizado la siguiente tupla con nombre:
+tvshows=namedtuple('TvShows', 'ID, Title, Age, rating, Netflix, Hulu, Prime_Video, Disney_Plus, Release_Date')
+
+Los tipos de cada uno de los campos son los siguientes:
+tvshows(int, str, str, float, boolean, boolean, boolean, boolean, datetime.date)
 
 ## Funciones implementadas
 Añade aquí descripciones genéricas de las funciones, que luego debes acompañar con comentarios de tipo documentación en el código
