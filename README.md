@@ -36,22 +36,14 @@ Los tipos de cada uno de los campos son los siguientes:
 tvshows(int, str, str, float, boolean, boolean, boolean, boolean, datetime.date)
 
 ## Funciones implementadas
-Añade aquí descripciones genéricas de las funciones, que luego debes acompañar con comentarios de tipo documentación en el código
+Hemos implementado varias funciones que realizan diferentes tareas, situadas en los dos módulos de manera organizada. El módulo principal es proyecto.py
 
-### \<modulo 1\>
+### \<modulo_proyecto\>
 
-* **<funcion 1>**: Descripción de la función 1.
-* **<funcion 2>**: Descripción de la función 2.
-* ...
+* **<lee_datos(series)>**: Lee todos los datos del csv, devolviendo una lista de tipo tupla con los datos leídos. 
 
-### \<test modulo 1\>
+### \<test_proyecto\>
 
-* **<test funcion 1>**: Descripción de las pruebas realizadas a la función 1.
-* **<test funcion 2>**: Descripción de las pruebas realizadas a la función 2.
-* ...
-* 
-### \<modulo 2\>
+* **<main()>**: Con esta función indicamos desde dónde tenemos que ejecutar el código para que funcione de manera correcta.
 
-* **<funcion 1>**: Descripción de la función 1.
-* **<funcion 2>**: Descripción de la función 2.
-* ...
+
