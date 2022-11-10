@@ -37,3 +37,6 @@ def valoracion_media_netflix(tupla_con_nombre):
         if i.Netflix == True:
             result.append(i.rating)
     return result
+
+def valor_max_por_empresa(tupla_con_nombre):
+    resu
