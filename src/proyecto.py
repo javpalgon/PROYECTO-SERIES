@@ -18,8 +18,22 @@ def lee_datos(series):
             Hulu=bool(lista[5])
             Prime_Video=bool(lista[6])
             Disney_Plus=bool(lista[7])
-            Release_Date= datetime.strptime(lista[8], "%d/%m/%Y").date()
+            Release_Date= lista[8]
 
             tupla_con_nombre = tvshows(ID, Title, Age, rating, Netflix, Hulu, Prime_Video, Disney_Plus, Release_Date)
             result.append(tupla_con_nombre)
+    return result
+
+def filtra_por_edad(tupla_con_nombre):
+    result = []
+    for i in tupla_con_nombre:
+        if i.Age == 'all':
+            result.append(i)
+    return result
+
+def valoracion_media_netflix(tupla_con_nombre):
+    result = []
+    for i in tupla_con_nombre:
+        if i.Netflix == True:
+            result.append(i.rating)
     return result
