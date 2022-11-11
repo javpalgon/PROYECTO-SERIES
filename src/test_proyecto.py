@@ -7,6 +7,9 @@ def test_valoracion_media_netflix(proyecto):
     media= (sum(calculo_media)/len(calculo_media))
     print("valoracion media de los shows de netflix:", "{0:.2f}".format(media))
 
+def test_max_valoracion_series_familiares(proyecto):
+    print("Te recomendamos esta serie para ver junto a los mas peques de casa!!:", max_valoracion_series_familiares(proyecto))
+
 def main():
     tv_series = lee_datos("./data/TV_SHOWS_0.csv")
 
@@ -18,7 +21,8 @@ def main():
     #print(tv_series[-2])
     #print(tv_series[-3])
     #test_filtra_por_edad(tv_series)
-    test_valoracion_media_netflix(tv_series)
+    #test_valoracion_media_netflix(tv_series)
+    test_max_valoracion_series_familiares(tv_series)
 
 if __name__ == "__main__":
     main()

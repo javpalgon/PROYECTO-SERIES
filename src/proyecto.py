@@ -31,6 +31,7 @@ def filtra_por_edad(tupla_con_nombre):
             result.append(i)
     return result
 
+
 def valoracion_media_netflix(tupla_con_nombre):
     result = []
     for i in tupla_con_nombre:
@@ -38,5 +39,17 @@ def valoracion_media_netflix(tupla_con_nombre):
             result.append(i.rating)
     return result
 
-def valor_max_por_empresa(tupla_con_nombre):
-    resu
+def valoraciones(tupla_con_nombre):
+    result=[]
+    for i in tupla_con_nombre:
+        result.append(i.rating)
+    return result
+
+def max_valoracion_series_familiares(tupla_con_nombre):
+    result=[]
+    
+    for i in filtra_por_edad(tupla_con_nombre):
+        fin= (i.Title, i.Age, i.rating)
+        if i.rating == max(valoraciones(tupla_con_nombre)):
+            result.append(fin)
+    return result
