@@ -40,18 +40,33 @@ Hemos implementado varias funciones que realizan diferentes tareas, situadas en 
 
 ### \<modulo_proyecto\>
 
-  * **<ENTREGA 0>**
-
-* **<lee_datos(series)>**: Lee todos los datos del csv, devolviendo una lista de tipo tupla con los datos leídos.
-
   * **<ENTREGA 1>**
 
-* **<filtra_por_edad(series)>**:   
+* **<lee_datos(series)>**: Lee todos los datos del csv, devolviendo una lista de tuplas con los datos leídos.
+
+  * **<ENTREGA 2>**
+    * **<BLOQUE 1>**
+* **<series_para_todos(series)>**: dadas una lista de tuplas de tipo info, nos devuelve una lista la cual contiene los nombres de todos los shows que no tienen edad mínima para ver.
+
+    * **<BLOQUE 2>**
+* **<valoracion_media_netflix(series)>**: dadas una lista de tuplas de tipo info, almacena en una lista de tuplas todas las valoraciones de todos los shows que se pueden ver en Netflix.
+
+    * **<BLOQUE 3>**
+* **<valoraciones(series)>**: recibe una lista de tuplas de tipo info y nos devuelve una lista de tuplas que contiene las valoraciones de todas las series 
+* **<max_valoracion_series_familiares(series)>**: recibe una lista de tuplas de tipo info y devuelve la serie mejor valorada de tipo familiar.
+
+    * **<BLOQUE 4>**
+* **<agrupar_segun_fecha_lanzamiento>**: recibe una lista de tuplas de tipo info y devuelve un diccionario con las series que han salido en el mismo año. Luego la clave es el año de lanzamiento y sus valores asociados son los shows que salieron en ese año.
+
 * **<>
 ### \<test_proyecto\>
 
 Aquí se ponen a prueba todas las funciones desarrolladas en el otro módulo, nombradas de igual manera pero con test" delante. Por ejemplo:
-* **<test_filtra_por_edad>**
-* **<main()>**: Con esta función indicamos desde dónde tenemos que ejecutar el código para que funcione de manera correcta.
+* **<test_series_para_todos(lee_datos)>**
+* **<test_valoracion_media_netflix(series_netflix)>**
+* **<test_max_valoracion_series_familiares(valoraciones)>**
+* **<test_agrupar_segun_fecha_lanzamiento(lee_datos)>**
+
+
 
 

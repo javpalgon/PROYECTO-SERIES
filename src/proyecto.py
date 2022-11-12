@@ -31,6 +31,11 @@ def series_para_todos(series):
             result.append(i)
     return result
 
+def valoraciones(series):
+    result=[]
+    for i in series:
+        result.append(i.rating)
+    return result
 
 def valoracion_media_netflix(series):
     result = []
@@ -39,16 +44,11 @@ def valoracion_media_netflix(series):
             result.append(i.rating)
     return result
 
-def valoraciones(series):
-    result=[]
-    for i in series:
-        result.append(i.rating)
-    return result
 
 def max_valoracion_series_familiares(series):
     result=[]
     for i in series_para_todos(series):
-        fin= (i.Title, i.Age, i.rating)
+        fin = (i.Title, i.Age, i.rating)
         if i.rating == max(valoraciones(series)):
             result.append(fin)
     return result
