@@ -40,10 +40,18 @@ Hemos implementado varias funciones que realizan diferentes tareas, situadas en 
 
 ### \<modulo_proyecto\>
 
-* **<lee_datos(series)>**: Lee todos los datos del csv, devolviendo una lista de tipo tupla con los datos leídos. 
+  * **<ENTREGA 0>**
 
+* **<lee_datos(series)>**: Lee todos los datos del csv, devolviendo una lista de tipo tupla con los datos leídos.
+
+  * **<ENTREGA 1>**
+
+* **<filtra_por_edad(series)>**:   
+* **<>
 ### \<test_proyecto\>
 
+Aquí se ponen a prueba todas las funciones desarrolladas en el otro módulo, nombradas de igual manera pero con test" delante. Por ejemplo:
+* **<test_filtra_por_edad>**
 * **<main()>**: Con esta función indicamos desde dónde tenemos que ejecutar el código para que funcione de manera correcta.
 
 

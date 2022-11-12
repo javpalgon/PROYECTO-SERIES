@@ -24,38 +24,38 @@ def lee_datos(series):
             result.append(tupla_con_nombre)
     return result
 
-def filtra_por_edad(tupla_con_nombre):
+def series_para_todos(series):
     result = []
-    for i in tupla_con_nombre:
+    for i in series:
         if i.Age == 'all':
             result.append(i)
     return result
 
 
-def valoracion_media_netflix(tupla_con_nombre):
+def valoracion_media_netflix(series):
     result = []
-    for i in tupla_con_nombre:
+    for i in series:
         if i.Netflix == True:
             result.append(i.rating)
     return result
 
-def valoraciones(tupla_con_nombre):
+def valoraciones(series):
     result=[]
-    for i in tupla_con_nombre:
+    for i in series:
         result.append(i.rating)
     return result
 
-def max_valoracion_series_familiares(tupla_con_nombre):
+def max_valoracion_series_familiares(series):
     result=[]
-    for i in filtra_por_edad(tupla_con_nombre):
+    for i in series_para_todos(series):
         fin= (i.Title, i.Age, i.rating)
-        if i.rating == max(valoraciones(tupla_con_nombre)):
+        if i.rating == max(valoraciones(series)):
             result.append(fin)
     return result
 
-def agrupar_segun_fecha_lanzamiento(tupla_con_nombre):
+def agrupar_segun_fecha_lanzamiento(series):
     result = dict()
-    for i in tupla_con_nombre:
+    for i in series:
         clave = i.Release_Date.year
         if clave in result:
             result[clave] += i

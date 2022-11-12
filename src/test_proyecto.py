@@ -1,6 +1,6 @@
 from proyecto import *
-def test_filtra_por_edad(proyecto):
-    print("Series +18: ",filtra_por_edad(proyecto), end=' ')
+def test_series_para_todos(proyecto):
+    print("Series +18: ",series_para_todos(proyecto), end=' ')
 
 def test_valoracion_media_netflix(proyecto):
     calculo_media = valoracion_media_netflix(proyecto)
@@ -25,7 +25,7 @@ def main():
     #print(tv_series[-1]) 
     #print(tv_series[-2])
     #print(tv_series[-3])
-    #test_filtra_por_edad(tv_series)
+    #test_series_para_todos(tv_series)
     #test_valoracion_media_netflix(tv_series)
     #test_max_valoracion_series_familiares(tv_series)
     test_agrupar_segun_fecha_lanzamiento(tv_series)
