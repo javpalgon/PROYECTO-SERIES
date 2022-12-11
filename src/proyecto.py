@@ -1,7 +1,7 @@
 import csv
-from collections import namedtuple, defaultdict, Counter
-from datetime import date, datetime
-from unittest import result
+from collections import namedtuple
+from datetime import datetime
+from parsers import *
 
 tvshows=namedtuple('TvShows', 'id, Title, Age, rating, Netflix, Hulu, Prime_Video, Disney_Plus, Release_Date')
 def lee_datos(series):
@@ -14,10 +14,10 @@ def lee_datos(series):
             Title= str(lista[1])
             Age = str(lista[2])
             rating=float(lista[3])
-            Netflix=bool(lista[4])
-            Hulu=bool(lista[5])
-            Prime_Video=bool(lista[6])
-            Disney_Plus=bool(lista[7])
+            Netflix=parsea_bool(lista[4])
+            Hulu=parsea_bool(lista[5])
+            Prime_Video=parsea_bool(lista[6])
+            Disney_Plus=parsea_bool(lista[7])
             Release_Date=datetime.strptime(lista[8],"%d/%m/%Y")
 
             tupla_con_nombre = tvshows(id, Title, Age, rating, Netflix, Hulu, Prime_Video, Disney_Plus, Release_Date)
@@ -42,7 +42,7 @@ def valoracion_media_netflix(series):
     for i in series:
         if i.Netflix == True:
             result.append(i.rating)
-    return result
+    return (sum(result)/len(result))
 
 
 def max_valoracion_series_familiares(series):
@@ -100,4 +100,13 @@ def mejores_series_por_edad(series, n=3):
         if s.Age not in diccionario:
             diccionario.setdefault(s.Age, sorted(valoraciones_shows_por_edad(series, s.Age), key= lambda x:x[1], reverse = True)[:n])
     return diccionario
+
+def top_series_ninyos_Disney_Plus(series, n=5):
+    result = []
+    for s in series:
+        if s.Disney_Plus == True and s.Age == '7+':
+            result.append((s.Title, s.rating))
+    return sorted(result, key=lambda x: x[1], reverse=True)[:n]
+            
+            
         

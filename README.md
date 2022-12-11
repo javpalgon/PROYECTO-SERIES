@@ -9,7 +9,9 @@ El objetivo de este proyecto es analizar y estudiar los datos y características
 * **/src**: Contiene los diferentes módulos de Python que conforman el proyecto.
   * **\<proyecto.py\>**: En este módulo se encuentra la función que lee los datos del .csv y los inserta en una lista vacía de manera ordenada.
   * **\<test_proyecto.py\>**: En el módulo de pruebas se invocan las funciones del módulo proyecto.py, ya que aquí se encuentra el main. 
-* **/data**: Contiene el dataset o datasets del proyecto
+  * **\<grafica.py\>**: módulo creado únicamente para la gráfica y la función auxiliar.
+  * **\<parsers.py\>**: módulo creado para parsear los boolean.
+* **/data**: Contiene el dataset o datasets del proyecto.
     * **\<TV_SHOWS_0.csv\>**: Fichero donde se encuentran todos los datos con los que hemos trabajado.
 
     
@@ -48,24 +50,54 @@ Hemos implementado varias funciones que realizan diferentes tareas, situadas en 
     * **<BLOQUE 1>**
 * **<series_para_todos(series)>**: dadas una lista de tuplas de tipo info, nos devuelve una lista la cual contiene los nombres de todos los shows que no tienen edad mínima para ver.
 
-    * **<BLOQUE 2>**
 * **<valoracion_media_netflix(series)>**: dadas una lista de tuplas de tipo info, almacena en una lista de tuplas todas las valoraciones de todos los shows que se pueden ver en Netflix.
 
-    * **<BLOQUE 3>**
-* **<valoraciones(series)>**: recibe una lista de tuplas de tipo info y nos devuelve una lista de tuplas que contiene las valoraciones de todas las series 
+    * **<BLOQUE 2>**
+* **<valoraciones(series)>**: recibe una lista de tuplas de tipo info y nos devuelve una lista de tuplas que contiene las valoraciones de todas las series
 * **<max_valoracion_series_familiares(series)>**: recibe una lista de tuplas de tipo info y devuelve la serie mejor valorada de tipo familiar.
 
-    * **<BLOQUE 4>**
-* **<agrupar_segun_fecha_lanzamiento>**: recibe una lista de tuplas de tipo info y devuelve un diccionario con las series que han salido en el mismo año. Luego la clave es el año de lanzamiento y sus valores asociados son los shows que salieron en ese año.
+* **<agrupar_segun_fecha_lanzamiento(series)>**: recibe una lista de tuplas y devuelve un diccionario con las series que han salido en el mismo año. Luego la clave es el año de lanzamiento y sus valores asociados son los shows que salieron en ese año.
 
-* **<>
-### \<test_proyecto\>
+  * **<ENTREGA 3>**
+    * **<BLOQUE 3>** 
+* **<total_series_por_anyo(series)>**: recibe una lista de tuplas y devuelve un diccionario cuyas claves son los anyos de lanzamiento de los shows y el valor de cada clave corresponde con el número de series que se lanzaron ese anyo.
 
-Aquí se ponen a prueba todas las funciones desarrolladas en el otro módulo, nombradas de igual manera pero con test" delante. Por ejemplo:
-* **<test_series_para_todos(lee_datos)>**
-* **<test_valoracion_media_netflix(series_netflix)>**
-* **<test_max_valoracion_series_familiares(valoraciones)>**
-* **<test_agrupar_segun_fecha_lanzamiento(lee_datos)>**
+* **<maximo_minimo_shows_por_anyo(series)>**: recibe el diccionario de la función anterior y devuelve dos tuplas, que corresponden al anyo donde más shows se publicaron y dónde menos.
+
+* **<valoraciones_shows_por_edad(series,edad)>**: esta función sirve de apoyo para formar las 2 siguientes, ya que devuelve un diccionario cuyas claves son las edades recomendadas para ver el show y los valores son el título del show y su valoración correspondiente.
+
+* **<mejor_serie_por_edad(series)>**: recibe el diccionario creado en la función anterior, y devuelve el titulo de la serie mejor valorada para cada edad recomendada, con su respectiva valoración.
+
+* **<mejores_series_por_edad(series,n=3)>**: recibe el diccionario creado en 'valoraciones_shows_por_edad' y un entero n y devuelve las n series con mejor valoración para cada edad recomendada. Las claves siguen siendo la edad recomendada.
+
+* **<top_series_ninyos_Disney_Plus(series,n=5)>**: recibe una lista de tuplas y un número entero n y devuelve una lista con n tuplas ordenadas de mayor a menor según su valoración. Estas series tienen que estar disponibles en Disney_Plus.
+
+### \<modulo_grafica\>
+
+
+  * **<BLOQUE 4>**
+* **<total_series_segun_edad(series)>**: recibe una lista de tuplas y devuelve un diccionario cuyas claves son la edad para ver el show y cuyo valor, el número de series que hay para cada edad. Esta función es auxiliar para crear la gráfica.
+
+* **<grafica_numero_series_segun_edad(series)>**: recibe el diccionario creado en la función anterior y devuelve una gráfica con el número total de shows que pertenecen a cada edad recomendada. 
+
+### \<modulo_parsers\>
+* **<parsea_bool(cadena)>**: dado un entero (en este caso, 1 o 0), devuelve 'True' si recibe un 1 y 'False' si recibe un 0. Esta función ha sido utilizada para leer los datos del csv en 'lee_datos'.
+
+
+### \<modulo_test_proyecto\>
+
+Aquí se ponen a prueba todas las funciones desarrolladas en el otro módulo, nombradas de igual manera pero con "test" delante. Por ejemplo:
+* **<test_lee_datos(datos)>**
+* **<test_series_para_todos(datos)>**
+* **<test_valoracion_media_netflix(datos)>**
+* **<test_max_valoracion_series_familiares(datos)>**
+* **<test_agrupar_segun_fecha_lanzamiento(datos)>**
+* **<test_total_series_por_anyo(datos)>**
+* **<test_maximo_minimo_shows_por_anyo(datos)>**
+* **<test_mejor_serie_por_edad(datos)>**
+* **<test_mejores_series_por_edad(datos)>**
+* **<test_top_series_ninyos_Disney_Plus(datos)>**
+* **<test_grafica_numero_series_segun_edad(datos)>**
 
 
 
