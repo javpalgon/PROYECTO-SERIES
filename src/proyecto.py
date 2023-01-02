@@ -1,5 +1,5 @@
 import csv
-from collections import namedtuple
+from collections import namedtuple, defaultdict
 from datetime import datetime
 from parsers import *
 
@@ -56,7 +56,7 @@ def max_valoracion_series_familiares(series):
 def agrupar_segun_fecha_lanzamiento(series):
     result = dict()
     for i in series:
-        clave = i.Release_Date.year
+        clave = i.Release_Date.month
         if clave in result:
             result[clave] += i
         else:
@@ -107,6 +107,3 @@ def top_series_ninyos_Disney_Plus(series, n=5):
         if s.Disney_Plus == True and s.Age == '7+':
             result.append((s.Title, s.rating))
     return sorted(result, key=lambda x: x[1], reverse=True)[:n]
-            
-            
-        
